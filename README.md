@@ -12,10 +12,6 @@ Configurable Parameters:
 * `flapper` - The underlying burner strategy (e.g. the address of `FlapperUniV2SwapOnly`).
 * `farm` - The staking rewards contract receiving the rewards.
 
-### FlapperUniV2
-
-Exposes an `exec` operation to be triggered periodically by the `Splitter` (at a cadence determined by `Splitter.hop()`). Its logic withdraws `USDS` from the `Splitter` and buys `gem` tokens on Uniswap v2. The acquired tokens, along with a proportional amount of `USDS` (saved from the initial withdraw) are deposited back into the liquidity pool. Finally, the minted LP tokens are sent to a predefined `receiver` address.
-
 Configurable Parameters:
 * `pip` - A reference price oracle, used for bounding the exchange rate of the swap.
 * `want` - Relative multiplier of the reference price to insist on in the swap. For example, a value of 0.98 * `WAD` allows for a 2% worse price than the reference.
